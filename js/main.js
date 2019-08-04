@@ -64,6 +64,20 @@ function turnOff() {
     }
   );
 }
+
+function loaderDot() {
+  if (
+    $("#txt")
+      .text()
+      .indexOf("...") !== -1
+  ) {
+    $("#txt").text("Initializing");
+    $("#txt").attr("data-text", "Initializing");
+  } else {
+    $("#txt").text($("#txt").text() + ".");
+    $("#txt").attr("data-text", String($("#txt").attr("data-text")) + ".");
+  }
+}
 let b = baffle("#txt").start();
 const eventDate = new Date(2019, 8, 6);
 $("#logo").hide();
@@ -73,24 +87,21 @@ $(document).ready(() => {
       new Date(eventDate - Date.now()) / 1000 / 60 / 60 / 24
     );
     setTimeout(() => {
-      if (diff == 1) {
-        b.text(() => "1 day to go!").reveal(5500);
-        $("#txt").attr('data-text', "1 day to go!");
-      }else if (diff < 1) {
-        b.text(() => "We're back!").reveal(5500);
-        $("#txt").attr('data-text', "We're back!");
+      if (diff < 1) {
+        b.text(() => "Initialization Completed.").reveal(5500);
+        $("#txt").attr("data-text", "Initialization Completed.");
+        $(".lds-ring").fadeOut(2300);
       } else {
         let c = baffle("#timer").start();
 
-        b.text(() => "We'll be back in").reveal(5500);
-        $("#txt").attr('data-text', "We'll be back in");
-        
-        diff = diff > 1 ? `${diff} days` : `${diff} day`;
+        b.text(() => "Initializing...").reveal(5500);
+        $("#txt").attr("data-text", "Initializing...");
+        setInterval(loaderDot, 1000);
+        diff = diff > 1 ? `${diff} days left` : `${diff} day left`;
         $("#timer").attr("data-text", `${diff}`);
 
         c.text(() => {
-
-          return `${diff}`
+          return `${diff}`;
         }).reveal(5500);
       }
     }, 3000);
