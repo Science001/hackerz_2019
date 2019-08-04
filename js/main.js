@@ -88,7 +88,10 @@ $(document).ready(() => {
         diff = diff > 1 ? `${diff} days` : `${diff} day`;
         $("#timer").attr("data-text", `${diff}`);
 
-        c.text(() => `${diff}`).reveal(5500);
+        c.text(() => {
+
+          return `${diff}`
+        }).reveal(5500);
       }
     }, 3000);
   });

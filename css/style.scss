@@ -54,6 +54,15 @@ div#centerDiv {
 }
 .nav-link{
   color: #0a557b;
+  cursor: pointer;
+}
+.modal-dialog{
+  background: radial-gradient(#f1f1f1, #acacac);
+}
+body.modal-open .container-fluid{
+  filter: blur(4px);
+  // filter: url("https://gist.githubusercontent.com/amitabhaghosh197/b7865b409e835b5a43b5/raw/1a255b551091924971e7dee8935fd38a7fdf7311/blur.svg#blur");
+filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
 }
 $primaryColor: #fff;
 $secondaryColor: #333;
