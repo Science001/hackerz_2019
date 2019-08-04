@@ -78,6 +78,22 @@ function loaderDot() {
     $("#txt").attr("data-text", String($("#txt").attr("data-text")) + ".");
   }
 }
+
+$(function () {
+  $('.mat-input-outer label').click(function () {
+      $(this).prev('input').focus();
+  });
+  $('.mat-input-outer input').focusin(function () {
+      $(this).next('label').addClass('active');
+  });
+  $('.mat-input-outer input').focusout(function () {
+      if (!$(this).val()) {
+          $(this).next('label').removeClass('active');
+      } else {
+          $(this).next('label').addClass('active');
+      }
+  });
+});
 let b = baffle("#txt").start();
 const eventDate = new Date(2019, 8, 6);
 $("#logo").hide();
@@ -108,3 +124,11 @@ $(document).ready(() => {
   });
 });
 particlesJS.load("particle-bg", "js/particles-config.json");
+$('#login-btn').click();
+
+// document.querySelectorAll('input').forEach(inp => {
+//   inp.onfocus = e => {
+//     console.log(e);
+    
+//     e.preventDefault();}
+// })

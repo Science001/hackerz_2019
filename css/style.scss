@@ -9,6 +9,9 @@ body {
 #logo {
   max-height: 400px;
 }
+#log-reg-body{
+  box-shadow: 0px 0px 13px #212121;
+}
 #logo-container {
   filter: invert(100%);
   height: 90vh;
@@ -60,9 +63,9 @@ div#centerDiv {
   cursor: pointer;
 }
 
-.modal-dialog{
-  background: radial-gradient(#f1f1f1, #acacac);
-}
+// .modal-dialog{
+//   background: radial-gradient(#f1f1f1, #acacac);
+// }
 body.modal-open .container-fluid{
   -webkit-filter: blur(4px);
   -moz-filter: blur(4px);
@@ -152,5 +155,121 @@ $steps: 20;
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+.mat-input-outer{
+  display: table;
+  position: relative;
+  margin: 22px;
+}
+.mat-input-outer input{
+  height: 50px;
+  border-radius: 3px;
+  border: none;
+  width: 100%;    
+  padding: 0 15px;
+  // font-size: 20px;
+}
+.mat-input-outer input:focus{
+  border: 2px solid #0a557b;
+
+}
+.mat-input-outer label{
+  font-size: 14px;
+  left: 15px;
+  position: absolute;
+  top: 18px;
+  transition: .2s;
+  color: #000;
+  cursor: text;
+  font-weight: normal;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+.mat-input-outer .border{
+  height: 1px;
+  background: #000;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -ms-transition: .3s;
+}
+.mat-input-outer .border::before{
+  content: " ";
+  display: table;
+  height: 3px;
+  width: 0%;
+  background: transparent;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -ms-transition: .3s;
+  margin: 0 auto;
+}
+.mat-input-outer input:focus ~ .border{
+  background: transparent;
+}
+.mat-input-outer input:focus ~ .border::before{
+  width: 100%;
+  background:#0a557b;
+}
+.mat-input-outer input + label.active{
+  left: 5px;
+  top: -25px;
+  color: #0a557b;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+$purple: #0a557b;
+$red: #e74c3c;
+.btn2 {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 1.5px solid $purple;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline;
+  align-self: center;
+  font-size: 1rem;
+  margin: 20px;
+  padding: 12px;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    outline: 0;
+  }
+}
+
+.fifth {
+  border-color: $purple;
+  // border: 0;
+  border-radius: 5px;
+  color: $purple;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 150ms ease-in-out;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background: $purple;
+    z-index: -1;
+    transition: width 150ms ease-in-out;
+  }
+  
+  &:hover {
+    color: #fff;
+    &:after {
+      width: 110%;
+    }
   }
 }
