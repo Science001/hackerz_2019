@@ -64,12 +64,33 @@ function turnOff() {
     }
   );
 }
-let b = baffle(".glitch").start();
-
+let b = baffle("#txt").start();
+const eventDate = new Date(2019, 8, 6);
 $("#logo").hide();
-$("#logo").fadeIn("slow", () => {
-  //   $("#logo").hide();
-  // turnOff();
-  // $("#logo").zoomIn(2);
-  b.text(currentText => "We'll be back in").reveal(1500);
+$(document).ready(() => {
+  $("#logo").fadeIn("slow", () => {
+    let diff = Math.floor(
+      new Date(eventDate - Date.now()) / 1000 / 60 / 60 / 24
+    );
+    setTimeout(() => {
+      if (diff == 1) {
+        b.text(() => "1 day to go!").reveal(5500);
+        $("#txt").attr('data-text', "1 day to go!");
+      }else if (diff < 1) {
+        b.text(() => "We're back!").reveal(5500);
+        $("#txt").attr('data-text', "We're back!");
+      } else {
+        let c = baffle("#timer").start();
+
+        b.text(() => "We'll be back in").reveal(5500);
+        $("#txt").attr('data-text', "We'll be back in");
+        
+        diff = diff > 1 ? `${diff} days` : `${diff} day`;
+        $("#timer").attr("data-text", `${diff}`);
+
+        c.text(() => `${diff}`).reveal(5500);
+      }
+    }, 3000);
+  });
 });
+particlesJS.load("particle-bg", "js/particles-config.json");
