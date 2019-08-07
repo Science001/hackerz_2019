@@ -120,11 +120,12 @@ $(document).ready(() => {
           return `${diff}`;
         }).reveal(5500);
       }
+      // setTimeout(turnOff, 2000);
     }, 3000);
   });
 });
 particlesJS.load("particle-bg", "js/particles-config.json");
-$('#login-btn').click();
+// $('#login-btn').click();
 
 // document.querySelectorAll('input').forEach(inp => {
 //   inp.onfocus = e => {
