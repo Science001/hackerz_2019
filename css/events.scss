@@ -226,10 +226,12 @@ $steps: 10;
   border-radius: 6px;
   box-shadow: 0 0 6px #17141d;
   // width: 30%;
-  padding: 0 12px;
+  padding: 5px 12px;
+  text-decoration: none;
   
 }
 .bttn:hover{
+  text-decoration: none;
   background-color: #fff;
   color: #17141d;
 }

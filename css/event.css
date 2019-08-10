@@ -1,0 +1,25 @@
+body {
+  background-repeat: no-repeat;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+#particle-bg {
+  position: fixed;
+  z-index: -3;
+  height: 100vh;
+  left: 0;
+  right: 0;
+}
+
+#nav-bar {
+  position: fixed;
+  z-index: 5;
+}
+
+.hackerz-brand {
+  font-size: 1.2em;
+  position: relative;
+  top: 18px;
+}
+/*# sourceMappingURL=event.css.map */
