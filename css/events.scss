@@ -3,7 +3,7 @@ body {
     //   background: radial-gradient(#e66465, #9198e5);
     // background: #fff;
     background-repeat: no-repeat;
-    background-color:  #17141d;
+    background-color:  #000;
     // background-image: radial-gradient(#17141d, #fff) !important;
     // height: 100vh;
     overflow-x: hidden;
@@ -35,28 +35,93 @@ body {
 .event-container{
   height: 100vh;
 }
+.event-header{
+  // line-height: 1.5;
+  // margin-left: 2%;
+  font-size: 2rem;
+  text-align: center;
+}
+$primaryColor: #c1c1c1;
+$secondaryColor: #17141d;
+$steps: 10;
+.glitch {
+  position: relative;
+  margin: 0 auto;
+  color: $primaryColor;
+  // font-size: 80px;
+  // font-family: "Exo", sans-serif;
+  // font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.01em;
+  transform: scale3d(1, 1, 1);
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background: $secondaryColor;
+    color: $primaryColor;
+    clip: rect(0, 900px, 0, 0);
+  }
+
+  &::before {
+    left: 7px;
+    text-shadow: 1px 0 blue;
+    animation: glitch-effect 3s infinite linear alternate-reverse;
+  }
+
+  &::after {
+    left: 3px;
+    text-shadow: -1px 0 red;
+    animation: glitch-effect 2s infinite linear alternate-reverse;
+  }
+}
+
+@keyframes glitch-effect {
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+    }
+  }
+}
   .container2 {
     // position: absolute;
-    height: 300px;
+    height: 340px;
+    // height: 30vh;
     // width: 100vw;
     // top: 60px;
     // left: calc(50% - 300px);
     display: flex;
-    justify-content: center;
     overflow-x: scroll;
-    padding: 20px;
-    padding-left: auto;
+    padding: 40px 0 0 40px;
     overflow-y: hidden;
+    justify-content: inherit;
+  }
+  @media(min-width: 884px){
+
+    #workshops{
+      .container2{
+        justify-content: center;
+      }
+    }
   }
 
-  .container2::-webkit-scrollbar {
-    height: 0px;
-  }
+  // .container2::-webkit-scrollbar {
+  //   height: 0px;
+  // }
   .container2::-webkit-scrollbar {
     height: 4px;
+    
+  }
+  body::-webkit-scrollbar{
+    width: 4px;
   }
   
-  .container2:hover::-webkit-scrollbar-thumb {
+  .container2::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
     border-radius: 10px;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #fff;
@@ -76,10 +141,14 @@ body {
 //     box-shadow: 0 0 5px #212121;
 //     opacity: 1;
 // }
-
+.title {
+  color: #fff;
+  font-weight: 300;
+}
 .card2 {
   display: flex;
   height: 280px;
+  // height: 28vh;
   // width: 400px;
   min-width: 300px;
   background-color: #17141d;
@@ -90,6 +159,13 @@ body {
   transition: 0.4s ease-out;
   position: relative;
   left: 0px;
+  .title {
+    color: #fff;
+    font-weight: 300;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+  }
 }
 // .slide-top {
 // 	// -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s forwards;
@@ -114,19 +190,15 @@ body {
   transition: 0.9s ease-out;
 }
 
+
+
 .card2:hover ~ .card2 {
   position: relative;
   left: 50px;
   transition: 0.4s ease-out;
 }
 
-.title {
-  color: #fff;
-  font-weight: 300;
-  position: absolute;
-  left: 20px;
-  top: 15px;
-}
+
 
 .desc{
   color: #fff;
@@ -139,7 +211,30 @@ body {
   opacity: 0;
   transition: all 0.4s linear;
 }
-
-.card2:hover .desc{
-  opacity: 1;
+.bttn{
+  height: 40px;
+  opacity: 01;
+  opacity: 0;
+  transition: all 0.4s linear;
+  background-color: transparent;
+  color: #fff;
+  position: relative;
+  top: 80%;
+  left: 4%;
+  border: 1px solid #fff;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  box-shadow: 0 0 6px #17141d;
+  // width: 30%;
+  padding: 0 12px;
+  
+}
+.bttn:hover{
+  background-color: #fff;
+  color: #17141d;
+}
+.card2:hover{ 
+  .desc, .bttn{
+    opacity: 1;
+  }
 }
