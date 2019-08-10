@@ -9,164 +9,127 @@
     <link rel="stylesheet" href="css/events.css" />
     <!-- <link rel="stylesheet" href="Sympo/style.css"> -->
     <script src="js/jquery.min.js"></script>
+    
     <title>Events</title>
   </head>
   <body>
-    <!-- Modal 1 -->
-
-    <div
-      class="modal fade"
-      tabindex="-1"
-      role="dialog"
-      id="login-register"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <!-- <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button> -->
-          <div class="modal-body" id="log-reg-body">
-            <ul class="nav nav-tabs nav-fill">
-              <li class="nav-item">
-                <a
-                  class="nav-link active show"
-                  id="login-tab"
-                  data-toggle="tab"
-                  href="#login"
-                  role="tab"
-                  aria-controls="login"
-                  aria-selected="true"
-                  >Login</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  id="signup-tab"
-                  data-toggle="tab"
-                  href="#signup"
-                  role="tab"
-                  aria-controls="signup"
-                  >Sign Up</a
-                >
-              </li>
-            </ul>
-            <div class="tab-content">
-              <div
-                class="tab-pane fade active show"
-                id="login"
-                role="tabpanel"
-                aria-labelledby="login-tab"
-              >
-              <form action="" class="text-center">
-                <div class="row align-items-center justify-content-center">
-                  <div class="col col-auto">
-                    <div class="mat-input-outer">
-                      <input type="email" id="login-email" autocomplete="off" />
-                      <label for="login-email">Email</label>
-                      <div class="border"></div>
-                    </div>
-                  </div>
-                  <div class="col col-auto">
-                    <div class="mat-input-outer">
-                      <input type="password" id="login-password" autocomplete="off" />
-                      <label for="login-password">Password</label>
-                      <div class="border"></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <button class="btn2 fifth" type="submit">Log in</button>
-              </form>
-              </div>
-              <div
-                class="tab-pane fade"
-                id="signup"
-                role="tabpanel"
-                aria-labelledby="signup-tab"
-              >
-              <form action="" class="text-center">
-                  <div class="row align-items-center justify-content-center">
-                  <div class="col col-auto">
-                    <div class="mat-input-outer">
-                      <input type="email" id="signup-email" autocomplete="off" />
-                      <label for="signup-email">Email</label>
-                      <div class="border"></div>
-                    </div>
-                  </div>
-                  <div class="col col-auto">
-                    <div class="mat-input-outer">
-                      <input type="password" id="signup-password" autocomplete="off" />
-                      <label for="signup-password">Password</label>
-                      <div class="border"></div>
-                    </div>
-                  </div>
-                  <div class="col col-auto">
-                    <div class="mat-input-outer">
-                      <input type="password" id="signup-rep-password" autocomplete="off" />
-                      <label for="signup-rep-password">Repeat Password</label>
-                      <div class="border"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="text-center"></div>
-                  <button class="btn2 fifth" type="submit">Sign Up</button>
-                </div>
-              </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     
     <div class="container-fluid">
       <!-- Navbar -->
-      <section>
-        <nav class="navbar navbar-expand-lg navbar-dark justify-content-end">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbarNavAltMarkup"
-          >
-            <div class="navbar-nav">
-              <a class="nav-item nav-link active" id="home-btn" href="#">Home</a>
-              <a
-                class="nav-item nav-link"
-                href="#login"
-                id="login-btn"
-                data-toggle="modal"
-                data-target="#login-register"
-              >
-                Login
-              </a>
-              <a class="nav-item nav-link" id="events-btn" href="#">Events</a>
-            </div>
-          </div>
-        </nav>
-      </section>
+        <section id="nav-bar">
+          <nav class="navbar navbar-expand-lg navbar-dark justify-content-end">
+              <a class="navbar-brand" href="#">
+                  <img src="images/main.png" height="90" class="d-inline-block align-top" alt="">
+                  <span class="hackerz-brand" data-text="Hackerz">Hackerz</span>
+                </a>
+          </nav>
+        </section>
+
+
+      <div class="row align-items-center justify-content-center event-container" id="technical">
+        <div class="col-12 col-auto">
+
+          <div class="container2">
+            <section class="card2">
+              <h3 class="title">Event</h3>
+                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+              </section>
+        <section class="card2">
+          <h3 class="title">Event</h3>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+          </section>
+        <section class="card2">
+          <h3 class="title">Event</h3>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+          </section>
+          <section class="card2">
+            <h3 class="title">Event</h3>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+          </section>
+          <section class="card2">
+            <h3 class="title">Event</h3>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+          </section>
+        <section class="card2">
+          <h3 class="title">Event</h3>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+          </section>
+        <section class="card2">
+          <h3 class="title">Event</h3>
+          <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+        </section>
+      </div>
+    </div>
+    <div id="particle-bg"></div>
+  
+      </div>
+      <div class="row align-items-center justify-content-center event-container" id="non-technical">
+        <div class="col-12 col-auto">
+
+          <div class="container2">
+            <section class="card2">
+              <h3 class="title">Event</h3>
+                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+              </section>
+            <section class="card2">
+              <h3 class="title">Event</h3>
+                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+              </section>
+        <section class="card2">
+          <h3 class="title">Event</h3>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+          </section>
+        <section class="card2">
+          <h3 class="title">Event</h3>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+          </section>
+          <section class="card2">
+            <h3 class="title">Event</h3>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+          </section>
+          <section class="card2">
+            <h3 class="title">Event</h3>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+          </section>
+        <section class="card2">
+          <h3 class="title">Event</h3>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+          </section>
+        <section class="card2">
+          <h3 class="title">Event</h3>
+          <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+        </section>
+      </div>
+    </div>
+    <div id="particle-bg"></div>
+  
+      </div>
+      <div class="row align-items-center justify-content-center event-container" id="workshops">
+        <div class="col-12 col-auto">
+
+          <div class="container2">
+            <section class="card2">
+              <h3 class="title">Event</h3>
+                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+              </section>
+        <section class="card2">
+          <h3 class="title">Event</h3>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+          </section>
+        <section class="card2">
+          <h3 class="title">Event</h3>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
+          </section>
+      </div>
+    </div>
+    <div id="particle-bg"></div>
+  
+      </div>
 
       
       
 
   </div>
-    <div id="particle-bg"></div>
 
       
       <!-- TV effect -->
@@ -182,4 +145,5 @@
   <script src="js/baffle.min.js"></script>
   <script src="js/particles.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/events.js"></script>
 </html>
