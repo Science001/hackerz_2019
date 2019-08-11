@@ -10,27 +10,98 @@
     <!-- <link rel="stylesheet" href="Sympo/style.css"> -->
     <script src="js/jquery.min.js"></script>
 
-    <title>Events</title>
+    <title>Event Layout</title>
   </head>
   <body>
+    <!-- Navbar -->
+    <section id="nav-bar">
+      <nav class="navbar navbar-expand-lg navbar-dark justify-content-start">
+        <a class="navbar-brand" href="#">
+          <img
+            src="images/main.png"
+            height="90"
+            class="d-inline-block align-top"
+            alt=""
+          />
+          <span class="hackerz-brand" data-text="Hackerz">Hackerz</span>
+        </a>
+      </nav>
+    </section>
     <div class="container-fluid">
-      <!-- Navbar -->
-      <section id="nav-bar">
-        <nav class="navbar navbar-expand-lg navbar-dark justify-content-end">
-          <a class="navbar-brand" href="#">
-            <img
-              src="images/main.png"
-              height="90"
-              class="d-inline-block align-top"
-              alt=""
-            />
-            <span class="hackerz-brand" data-text="Hackerz">Hackerz</span>
-          </a>
-        </nav>
+      <section class="container-fluid">
+        <div
+          class="row justify-content-center align-items-center"
+          id="event-container"
+        >
+          <div class="col-md-9 col-12 col-auto" id="event-info">
+            <p class="title text-center event-title">Event</p>
+            <hr />
+            <div class="about-wrapper">
+              <p class="title rules">About the event</p>
+              <p class="title">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis
+                iure et facilis id? Aliquid molestiae odio, placeat mollitia
+                numquam temporibus vel a necessitatibus ipsum non et optio
+                accusamus hic porro, tempora omnis. Expedita maiores nobis vero
+                mollitia, eveniet tenetur nisi laboriosam? Ullam quibusdam
+                quisquam autem, aperiam numquam modi. Voluptas nihil excepturi
+                voluptatibus molestiae provident, dolor ut dolore nemo nesciunt
+                esse sed. Beatae doloribus autem commodi optio nesciunt tenetur
+                iure ad laudantium, accusamus non sunt consectetur, fugit quia
+                nam! Quibusdam porro iure ipsam quasi labore nisi, eos magnam
+                recusandae provident quidem molestias, tempora beatae voluptates
+                nam totam soluta vitae.
+              </p>
+            </div>
+            <div class="rules-wrapper">
+              <p class="title rules">Rules</p>
+              <ul>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 col-auto" id="register">
+            <p class="title text-center event-reg-header">
+              Let me hack the event
+            </p>
+            <hr />
+            <div class="about-wrapper">
+              <!-- <input type="email" name="email" id="mail-id" /> -->
+              <form action="" class="text-center">
+                <div class="row align-items-center justify-content-center">
+                  <div class="col col-auto">
+                    <div class="mat-input-outer">
+                      <input type="email" id="login-email" autocomplete="on" />
+                      <label for="login-email">Email</label>
+                      <div class="border"></div>
+                    </div>
+                  </div>
+                  <div class="col col-auto">
+                    <div class="mat-input-outer">
+                      <input type="tel" id="phone-num" autocomplete="on" />
+                      <label for="phone-num">Phone number</label>
+                      <div class="border"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="bttn" type="submit">Register me</button>
+              </form>
+            </div>
+            <div class="rules-wrapper"></div>
+          </div>
+          <div id="particle-bg"></div>
+        </div>
       </section>
     </div>
-
-    <div id="particle-bg"></div>
 
     <!-- TV effect -->
     <section>

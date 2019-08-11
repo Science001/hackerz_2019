@@ -5,36 +5,38 @@ body {
   background-repeat: no-repeat;
   height: 100vh;
   overflow: hidden;
+  user-select: none;
 }
 #logo {
   max-height: 400px;
 }
-#technical-events-con, #non-technical-events-con{
+#technical-events-con,
+#non-technical-events-con {
   height: 40vh;
   background-color: #fff;
   margin: 10px 0px 0px 0px;
 }
-#technical-events-con{
+#technical-events-con {
   color: #000;
 }
-#non-technical-events-con{
+#non-technical-events-con {
   color: #000;
 }
-#log-reg-body{
+#log-reg-body {
   box-shadow: 0px 0px 13px #212121;
 }
 #logo-container {
   filter: invert(100%);
   height: 100vh;
 }
-#timer{
+#timer {
   font-size: 2rem;
 }
-.nav-item{
+.nav-item {
   color: #0a557b !important;
   margin-right: 20px;
 }
-#particle-bg{
+#particle-bg {
   position: fixed;
   z-index: -3;
   height: 100vh;
@@ -67,7 +69,7 @@ div#centerDiv {
   display: none;
   z-index: 1;
 }
-.nav-link{
+.nav-link {
   color: #0a557b;
   cursor: pointer;
 }
@@ -75,14 +77,14 @@ div#centerDiv {
 // .modal-dialog{
 //   background: radial-gradient(#f1f1f1, #acacac);
 // }
-body.modal-open .container-fluid{
+body.modal-open .container-fluid {
   -webkit-filter: blur(4px);
   -moz-filter: blur(4px);
   -o-filter: blur(4px);
   -ms-filter: blur(4px);
   filter: blur(4px);
   // filter: url("https://gist.githubusercontent.com/amitabhaghosh197/b7865b409e835b5a43b5/raw/1a255b551091924971e7dee8935fd38a7fdf7311/blur.svg#blur");
-filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
 }
 $primaryColor: #fff;
 $secondaryColor: #333;
@@ -166,61 +168,60 @@ $steps: 20;
     transform: rotate(360deg);
   }
 }
-.mat-input-outer{
+.mat-input-outer {
   display: table;
   position: relative;
   margin: 22px;
 }
-.mat-input-outer input{
+.mat-input-outer input {
   height: 50px;
   border-radius: 3px;
   border: none;
-  width: 100%;    
+  width: 100%;
   padding: 0 15px;
   // font-size: 20px;
 }
-.mat-input-outer input:focus{
+.mat-input-outer input:focus {
   border: 2px solid #0a557b;
-
 }
-.mat-input-outer label{
+.mat-input-outer label {
   font-size: 14px;
   left: 15px;
   position: absolute;
   top: 18px;
-  transition: .2s;
+  transition: 0.2s;
   color: #000;
   cursor: text;
   font-weight: normal;
   opacity: 0.4;
   filter: alpha(opacity=40);
 }
-.mat-input-outer .border{
+.mat-input-outer .border {
   height: 1px;
   background: #000;
-  transition: .3s;
-  -webkit-transition: .3s;
-  -ms-transition: .3s;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -ms-transition: 0.3s;
 }
-.mat-input-outer .border::before{
+.mat-input-outer .border::before {
   content: " ";
   display: table;
   height: 3px;
   width: 0%;
   background: transparent;
-  transition: .3s;
-  -webkit-transition: .3s;
-  -ms-transition: .3s;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -ms-transition: 0.3s;
   margin: 0 auto;
 }
-.mat-input-outer input:focus ~ .border{
+.mat-input-outer input:focus ~ .border {
   background: transparent;
 }
-.mat-input-outer input:focus ~ .border::before{
+.mat-input-outer input:focus ~ .border::before {
   width: 100%;
-  background:#0a557b;
+  background: #0a557b;
 }
-.mat-input-outer input + label.active{
+.mat-input-outer input + label.active {
   left: 5px;
   top: -25px;
   color: #0a557b;
@@ -260,9 +261,9 @@ $red: #e74c3c;
   overflow: hidden;
   z-index: 1;
   transition: color 150ms ease-in-out;
-  
+
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     top: 0;
@@ -274,7 +275,7 @@ $red: #e74c3c;
     z-index: -1;
     transition: width 150ms ease-in-out;
   }
-  
+
   &:hover {
     color: #fff;
     &:after {
@@ -292,7 +293,7 @@ $color_grey_dark: #a2a2a2;
   display: flex;
   flex-direction: column;
   margin: 1rem auto;
-  box-shadow: 0 3px 7px -1px rgba(#000, .1);
+  box-shadow: 0 3px 7px -1px rgba(#000, 0.1);
   margin-bottom: 1.6%;
   background: $color_white;
   line-height: 1.4;
@@ -324,7 +325,7 @@ $color_grey_dark: #a2a2a2;
     left: 0;
     background-size: cover;
     background-position: center;
-    transition: transform .2s;
+    transition: transform 0.2s;
   }
   .details,
   .details ul {
@@ -339,14 +340,14 @@ $color_grey_dark: #a2a2a2;
     bottom: 0;
     left: -100%;
     margin: auto;
-    transition: left .2s;
-    background: rgba(#000, .6);
+    transition: left 0.2s;
+    background: rgba(#000, 0.6);
     color: $color_white;
     padding: 10px;
     width: 100%;
-    font-size: .9rem;
+    font-size: 0.9rem;
     a {
-      text-decoration: dotted underline
+      text-decoration: dotted underline;
     }
     ul li {
       display: inline-block;
@@ -410,7 +411,7 @@ $color_grey_dark: #a2a2a2;
           margin-left: -10px;
           opacity: 0;
           vertical-align: middle;
-          transition: margin .3s, opacity .3s;
+          transition: margin 0.3s, opacity 0.3s;
         }
 
         &:hover:after {
@@ -442,7 +443,6 @@ $color_grey_dark: #a2a2a2;
     }
   }
 
-
   @media (min-width: 640px) {
     flex-direction: row;
     max-width: 700px;
@@ -470,7 +470,7 @@ $color_grey_dark: #a2a2a2;
         &:before {
           left: inherit;
           right: -10px;
-          transform: skew(3deg)
+          transform: skew(3deg);
         }
       }
       .details {
