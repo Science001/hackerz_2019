@@ -1,11 +1,6 @@
 body {
-  // background: radial-gradient(#f1f1f1, #acacac);
-  //   background: radial-gradient(#e66465, #9198e5);
-  // background: #fff;
   background-repeat: no-repeat;
   background-color: #000;
-  // background-image: radial-gradient(#17141d, #fff) !important;
-  // height: 100vh;
   overflow-x: hidden;
   user-select: none;
 }
@@ -16,7 +11,28 @@ body {
   left: 0;
   right: 0;
 }
-
+#pbg2 {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -8;
+  top: 0;
+  left: 0;
+}
+.modal {
+  overflow: hidden;
+}
+#login-register,
+.nav-tabs {
+  background-color: rgb(23, 20, 29);
+  color: #fff;
+}
+.nav-link {
+  color: #fff;
+}
+.nav-link:hover {
+  color: #fff;
+}
 #nav-bar {
   position: fixed;
   z-index: 5;
@@ -28,25 +44,19 @@ body {
   position: relative;
   top: 18px;
 }
-
 #event-info,
 #register {
   background-color: #17141d;
-  // background-color: #fff;
   border-radius: 10px;
   box-shadow: -1rem 0 1rem #000;
-  // margin: 6% 12px 0 12px;
-  // opacity: 0.8;
   color: #fff;
   border: 1px solid #fff;
-  margin-left: -5px;
-  padding: 12px;
 }
 .mat-input-outer {
   display: table;
   position: relative;
-  margin: 22px 0px;
-  // width: 80%;
+  margin: 25px 0px;
+  width: 100%;
 }
 .mat-input-outer input {
   font-size: 16px;
@@ -55,7 +65,6 @@ body {
   border: none;
   width: 100%;
   padding: 0 15px;
-  // font-size: 20px;
 }
 .mat-input-outer input:focus {
   border: 2px solid #fff;
@@ -69,7 +78,6 @@ body {
   color: #000;
   cursor: text;
   font-weight: normal;
-  opacity: 0.4;
   filter: alpha(opacity=40);
 }
 .mat-input-outer .border {
@@ -125,13 +133,9 @@ hr {
 .rules {
   font-weight: bold;
 }
-#register {
-  min-height: 50%;
-}
 @media (max-width: 766px) {
   #register {
-    height: 400px;
-    margin-bottom: 10%;
+    margin: 20px;
   }
   #event-info {
     height: 80%;
@@ -147,7 +151,6 @@ body::-webkit-scrollbar-thumb,
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #fff;
-  // background-image: linear-gradient(#005c97, #363795);
 }
 body::-webkit-scrollbar,
 #event-info::-webkit-scrollbar {
@@ -155,21 +158,19 @@ body::-webkit-scrollbar,
 }
 .bttn {
   height: 40px;
-  // opacity: 01;
-  // opacity: 0;
   transition: all 0.4s linear;
   background-color: transparent;
   color: #fff;
-  // position: relative;
-  // top: 80%;
-  // left: 4%;
   border: 1px solid #fff;
   font-size: 0.8rem;
   border-radius: 6px;
   box-shadow: 0 0 6px #17141d;
-  // width: 30%;
   padding: 5px 12px;
   text-decoration: none;
+}
+.showw {
+  opacity: 1 !important;
+  margin: 0px;
 }
 .bttn:hover {
   text-decoration: none;

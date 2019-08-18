@@ -16,6 +16,33 @@ body {
   right: 0;
 }
 
+#pbg2 {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -8;
+  top: 0;
+  left: 0;
+}
+
+.modal {
+  overflow: hidden;
+}
+
+#login-register,
+.nav-tabs {
+  background-color: #17141d;
+  color: #fff;
+}
+
+.nav-link {
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
 #nav-bar {
   position: fixed;
   z-index: 5;
@@ -37,14 +64,13 @@ body {
           box-shadow: -1rem 0 1rem #000;
   color: #fff;
   border: 1px solid #fff;
-  margin-left: -5px;
-  padding: 12px;
 }
 
 .mat-input-outer {
   display: table;
   position: relative;
-  margin: 22px 0px;
+  margin: 25px 0px;
+  width: 100%;
 }
 
 .mat-input-outer input {
@@ -70,7 +96,6 @@ body {
   color: #000;
   cursor: text;
   font-weight: normal;
-  opacity: 0.4;
   filter: alpha(opacity=40);
 }
 
@@ -138,14 +163,9 @@ hr {
   font-weight: bold;
 }
 
-#register {
-  min-height: 50%;
-}
-
 @media (max-width: 766px) {
   #register {
-    height: 400px;
-    margin-bottom: 10%;
+    margin: 20px;
   }
   #event-info {
     height: 80%;
@@ -183,6 +203,11 @@ body::-webkit-scrollbar,
           box-shadow: 0 0 6px #17141d;
   padding: 5px 12px;
   text-decoration: none;
+}
+
+.showw {
+  opacity: 1 !important;
+  margin: 0px;
 }
 
 .bttn:hover {
