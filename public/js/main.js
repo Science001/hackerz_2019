@@ -22,7 +22,7 @@ function turnOff() {
           },
           300,
           () => {
-            window.open("/events.html", "_self");
+            window.open("/events", "_self");
           }
         );
     }
@@ -41,7 +41,7 @@ function loaderDot() {
     $("#txt").text($("#txt").text() + ".");
     $("#txt").attr("data-text", String($("#txt").attr("data-text")) + ".");
   }
-  setTimeout(turnOff, 1000);
+  setTimeout(turnOff, 3000);
 }
 
 $(function() {
@@ -94,7 +94,7 @@ $(document).ready(() => {
         }).reveal(5500);
       }
       // setTimeout(turnOff, 2000);
-    }, 3000);
+    }, 500);
   });
 });
 particlesJS.load("particle-bg", "js/particles-config.json");

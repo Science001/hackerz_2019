@@ -1,0 +1,14 @@
+{
+    "code-collision": {
+        "name": "Code Collision",
+        "tag": "",
+        "description": "Coding Solos! The fastest and most efficient problem solver survives. Come brawl in this fast paced knockout to prove your algorithmic prowess!",
+        "rules": ["This is a rule", "This is a rule"]
+    },
+    "developer-date": {
+        "name": "Developer Date",
+        "tag": "",
+        "description": "Coding Duos! One of the duo is isolated while the other solves a given problem. Halftime, the isolated duo swaps in and has to complete the code. Do you have the best better half?",
+        "rules": ["This is a rule", "This is a rule"]
+    }
+}
