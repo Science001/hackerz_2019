@@ -43,7 +43,7 @@ body {
   color: #fff;
 }
 
-#nav-bar {
+nav {
   position: fixed;
   z-index: 5;
   width: 100%;

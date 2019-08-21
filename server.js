@@ -42,9 +42,13 @@ app.get('/events', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'events.html'))
 })
 
+app.get('/events/:genre', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', `${req.params.genre}.html`))
+})
+
 app.get('/event/:name', (req, res) => {
-    if(!Object.keys(eventDetails).includes(req.params.name)) {
-        res.status(404).send({message: "No such event found"})
+    if (!Object.keys(eventDetails).includes(req.params.name)) {
+        res.status(404).send({ message: "No such event found" })
     }
     else {
         res.send(createPage(eventDetails[req.params.name]))
@@ -157,20 +161,20 @@ app.post('/logout', (req, res) => {
 })
 
 app.post('/register/:event', (req, res, next) => {
-    if(!req.session.user) {
-        res.status(401).send({message: "You have to be logged in to register for the event"})
+    if (!req.session.user) {
+        res.status(401).send({ message: "You have to be logged in to register for the event" })
     }
-    else if(!req.params.event) {
-        res.status(400).send({message: "No Event ID is specified in request"})
+    else if (!req.params.event) {
+        res.status(400).send({ message: "No Event ID is specified in request" })
     }
     else next()
 }, (req, res) => {
     pool.query("INSERT INTO registrations(student, event) VALUES($1, $2)", [req.session.user.id, req.params.event], (err, _result) => {
-        if(err) {
-            if(err.message.includes("registrations_pkey")) {
+        if (err) {
+            if (err.message.includes("registrations_pkey")) {
                 res.status(403).send({ message: "You have already registered for this event" })
             }
-            else if(err.message.includes("registrations_event_fkey")) {
+            else if (err.message.includes("registrations_event_fkey")) {
                 res.status(400).send({ message: "Invalid event name" })
             }
             else {
@@ -183,4 +187,4 @@ app.post('/register/:event', (req, res, next) => {
     })
 })
 
-app.listen(8080, ()=>console.log('Server running in 8080'))
+app.listen(8080, () => console.log('Server running in 8080'))
