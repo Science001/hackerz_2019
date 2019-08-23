@@ -1,9 +1,4 @@
-module.exports = function createPage(event) {
-    var rules = event.rules.map(rule => (`<li>${rule}</li>`))
-    var contacts
-    if(event.hasContacts)
-        contacts = event.contacts.map(contact => (`<a class="contact" href="tel:${contact.number}">${contact.name} <span style="font-size: 12px;">(${contact.number})</span></a>`))
-    return `<!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
   
   <head>
@@ -85,5 +80,4 @@ module.exports = function createPage(event) {
       </script>
   </body>
   
-  </html>`
-}
+  </html>

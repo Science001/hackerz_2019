@@ -2,177 +2,81 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/events.css">
-    <title>Hackerz | Technical Events</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/events.css">
+  <title>Hackerz | Technical Events</title>
 </head>
 
 <body>
-    <nav>
-        <a href="/events"><img src="../images/NewHackerzWhite.png" width="80" alt="hackerzLogo"
-                class="hackerzLogo" /></a>
-        <h3 class="event-header title glitch" data-text="Technical Events">Technical Events</h3>
-        <a href="#login" id="login-btn" data-toggle="modal" data-target="#login-register">
-            Login
-        </a>
-    </nav>
-    <section class="event-container" id="technical">
-        <div class="grid">
-            <div class="card2 item1">
-                <h3 class="title">Scavenger Hunt</h3>
-                <img class="hideableLogo" src="../icons/scavenger-filled.png" />
-                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
-                <a class="bttn" href="/event/scavenger-hunt">Learn More</a>
-            </div>
-            <div class="card2 item2">
-                <h3 class="title">Papyrus</h3>
-                <img class="hideableLogo" src="../icons/paper-filled.png" />
-                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
-                <a class="bttn" href="/event/papyrus">Learn More</a>
-            </div>
-            <div class="card2 item3">
-                <h3 class="title">Quizzard</h3>
-                <img class="hideableLogo" src="../icons/quiz-filled.png" />
-                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
-                <a class="bttn" href="/event/quizzard">Learn More</a>
-            </div>
-            <div class="card2 item4">
-                <h3 class="title">Code Collision</h3>
-                <img class="hideableLogo" src="../icons/code-filled.png" />
-                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
-                <a class="bttn" href="/event/code-collision">Learn More</a>
-            </div>
-            <div class="card2 item5">
-                <h3 class="title">Developer Date</h3>
-                <img class="hideableLogo" src="../icons/developer-filled.png" />
-                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
-                <a class="bttn" href="/event/developer-date">Learn More</a>
-            </div>
-            <div class="card2 item6">
-                <h3 class="title">Intel Inside</h3>
-                <img class="hideableLogo" src="../icons/intel-filled.png" />
-                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sequi.</p>
-                <a class="bttn" href="/event/intel-inside">Learn More</a>
-            </div>
-        </div>
-        <div id="particle-bg"></div>
-
-    </section>
-
-    <!-- Login/Register Modal -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="login-register" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" id="register">
-                <div class="modal-body">
-                    <ul class="nav nav-tabs nav-fill">
-                        <li class="nav-item">
-                            <a class="nav-link active show" id="login-tab" data-toggle="tab" href="#login" role="tab"
-                                aria-controls="login" aria-selected="true">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="signup-tab" data-toggle="tab" href="#signup" role="tab"
-                                aria-controls="signup">Sign Up</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane fade" role="tabpanel" id="signup" aria-labelledby="signup-tab">
-                            <!-- <p class="title text-center event-reg-header">
-                  Let me hack the event
-                </p>
-                <hr /> -->
-                            <!-- <input type="email" name="email" id="mail-id" /> -->
-                            <form action="" class="text-center">
-                                <div class="row align-items-center justify-content-center">
-                                    <div class="col-12 col-auto">
-                                        <div class="mat-input-outer">
-                                            <input type="email" id="register-email" autocomplete="on" />
-                                            <label for="register-email">Email</label>
-                                            <div class="border"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-auto">
-                                        <div class="mat-input-outer">
-                                            <input type="text" id="college" autocomplete="on" />
-                                            <label for="college">College</label>
-                                            <div class="border"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-auto">
-                                        <div class="mat-input-outer">
-                                            <input type="number" max="4" id="year" autocomplete="on" />
-                                            <label for="year">Year</label>
-                                            <div class="border"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-auto">
-                                        <div class="mat-input-outer">
-                                            <input type="text" id="department" autocomplete="on" />
-                                            <label for="department">Department</label>
-                                            <div class="border"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-auto">
-                                        <div class="mat-input-outer">
-                                            <input type="tel" id="phone-num" autocomplete="on" />
-                                            <label for="phone-num">Phone number</label>
-                                            <div class="border"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-auto">
-                                        <div class="mat-input-outer">
-                                            <input type="password" id="register-password" autocomplete="on" />
-                                            <label for="register-password">Password</label>
-                                            <div class="border"></div>
-                                        </div>
-                                    </div>
-
-                                    <button class="bttn showw" type="submit">Register me</button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="tab-pane fade active show" role="tabpanel" id="login" aria-labelledby="login-tab">
-                            <form action="" class="text-center">
-                                <div class="row align-items-center justify-content-center">
-                                    <div class="col-12 col-auto">
-                                        <div class="mat-input-outer">
-                                            <input type="email" id="login-email" autocomplete="on" />
-                                            <label for="login-email">Email</label>
-                                            <div class="border"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-auto">
-                                        <div class="mat-input-outer">
-                                            <input type="password" id="login-password" autocomplete="on" />
-                                            <label for="register-password">Password</label>
-                                            <div class="border"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="bttn showw" type="submit">Login</button>
-
-                            </form>
-                        </div>
-                    </div>
-                    <div id="pbg2"></div>
-                </div>
-            </div>
-        </div>
+  <nav>
+    <a href="/events"><img src="../images/NewHackerzWhite.png" width="80" alt="hackerzLogo" class="hackerzLogo" /></a>
+    <h3 class="event-header title glitch" data-text="Technical Events">Technical Events</h3>
+    <a href="/login" id="login-btn">
+      Login
+    </a>
+  </nav>
+  <section class="event-container" id="technical">
+    <div class="grid">
+      <div class="card2 item1">
+        <h3 class="title">Scavenger Hunt</h3>
+        <img class="hideableLogo" src="../icons/scavenger-filled.png" />
+        <p class="desc">Trace down the stack, hunt bugs and lead your way to solve the ultimate puzzle through clues,
+          all while debugging the code.
+        </p>
+        <a class="bttn" href="/event/scavenger-hunt">Learn More</a>
+      </div>
+      <div class="card2 item2">
+        <h3 class="title">Papyrus</h3>
+        <img class="hideableLogo" src="../icons/paper-filled.png" />
+        <p class="desc">Present your paper on topics of concern to the specialized panel of judges. The best work that
+          stands out takes the title.
+        </p>
+        <a class="bttn" href="/event/papyrus">Learn More</a>
+      </div>
+      <div class="card2 item3">
+        <h3 class="title">Quizzard</h3>
+        <img class="hideableLogo" src="../icons/quiz-filled.png" />
+        <p class="desc">Hands on the buzzer! Blaze through a series of technical quizzes to rise up the ranks. Can you
+          beat the quiz master?
+        </p>
+        <a class="bttn" href="/event/quizzard">Learn More</a>
+      </div>
+      <div class="card2 item4">
+        <h3 class="title">Code Collision</h3>
+        <img class="hideableLogo" src="../icons/code-filled.png" />
+        <p class="desc">Coding Solos! Come brawl in this fast
+          paced knockout to prove your algorithmic prowess!
+        </p>
+        <a class="bttn" href="/event/code-collision">Learn More</a>
+      </div>
+      <div class="card2 item5">
+        <h3 class="title">Developer Date</h3>
+        <img class="hideableLogo" src="../icons/developer-filled.png" />
+        <p class="desc">Coding Duos! But with a twist. Two people, double the trouble. Do you have the best better half?
+        </p>
+        <a class="bttn" href="/event/developer-date">Learn More</a>
+      </div>
+      <div class="card2 item6">
+        <h3 class="title">Intel Inside</h3>
+        <img class="hideableLogo" src="../icons/intel-filled.png" />
+        <p class="desc">Get your hands dirty in this hardware mode! Build a PC from scratch from isolated components.
+          Fastest fingers first.
+        </p>
+        <a class="bttn" href="/event/intel-inside">Learn More</a>
+      </div>
     </div>
-    <!-- ------------------------------------------------------------------------------------------ -->
+    <div id="particle-bg"></div>
 
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/particles.js"></script>
-    <script>
-        particlesJS.load("particle-bg", "../js/particles-config.json");
-        particlesJS.load("pbg2", "../js/particles-config.json");
-        document.getElementById("pbg2").onclick = function n(e) {
-            $("#login-register").modal("hide");
-        };
-    </script>
+  </section>
+
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/particles.js"></script>
+  <script>
+    particlesJS.load("particle-bg", "../js/particles-config.json");
+  </script>
 </body>
 
 </html>
