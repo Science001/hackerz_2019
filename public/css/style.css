@@ -1,15 +1,94 @@
+.nav {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn {
+  letter-spacing: 0.2rem;
+  margin: 25px;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  padding: 50px 100px;
+  font-size: 24px;
+  background-color: #0909099c;
+  transition: letter-spacing 0.2s ease-in;
+}
+
+.btn:hover {
+  letter-spacing: 0.4rem;
+}
+
+.btn:nth-child(even) {
+  border: 1px solid #CB356B;
+}
+
+.btn:nth-child(even):hover {
+  background: #CB356B;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #BD3F32, #CB356B);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  text-decoration: none;
+}
+
+.btn:nth-child(odd) {
+  border: 1px solid #0cebeb;
+}
+
+.btn:nth-child(odd):hover {
+  background: #0cebeb;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #29ffc6, #20e3b2, #0cebeb);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #29ffc6, #20e3b2, #0cebeb);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: black !important;
+    text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
 body {
   background-color: #17141d;
+  text-align: center;
+  color: white;
+  letter-spacing: 0.1rem;
   background-repeat: no-repeat;
-  overflow: hidden;
+  font-family: 'VT323', monospace;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
 
+.collegeLogo {
+  max-height: 100px;
+  margin-bottom: 15px;
+}
+
+.csiLogo {
+  max-height: 100px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 #logo {
   max-height: 250px;
+  margin: 30px auto;
 }
 
 #logo-container {
@@ -27,264 +106,3 @@ body {
   left: 0;
   right: 0;
 }
-
-div#topDiv {
-  width: 100%;
-  height: 0%;
-  opacity: 0.9;
-  background: black;
-  position: absolute;
-  top: 0%;
-}
-
-div#bottomDiv {
-  width: 100%;
-  height: 0%;
-  opacity: 0.9;
-  background: black;
-  position: absolute;
-  bottom: 0%;
-}
-
-div#centerDiv {
-  position: absolute;
-  height: 1px;
-  top: 50%;
-  width: 100%;
-  background: white;
-  display: none;
-  z-index: 1;
-}
-
-.nav-link {
-  color: #0a557b;
-  cursor: pointer;
-}
-
-.glitch {
-  position: relative;
-  margin: 0 auto;
-  color: #fff;
-  font-family: "Exo", sans-serif;
-  font-weight: 600;
-  text-align: center;
-  letter-spacing: 0.01em;
-  -webkit-transform: scale3d(1, 1, 1);
-          transform: scale3d(1, 1, 1);
-}
-
-.glitch::before, .glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  background: #333;
-  color: #fff;
-  clip: rect(0, 900px, 0, 0);
-}
-
-.glitch::before {
-  left: 7px;
-  text-shadow: 1px 0 green;
-  animation: glitch-effect 3s infinite linear alternate-reverse;
-}
-
-.glitch::after {
-  left: 3px;
-  text-shadow: -1px 0 red;
-  animation: glitch-effect 2s infinite linear alternate-reverse;
-}
-
-@-webkit-keyframes glitch-effect {
-  0% {
-    clip: rect(37px, 9999px, 17px, 0);
-  }
-  5% {
-    clip: rect(93px, 9999px, 19px, 0);
-  }
-  10% {
-    clip: rect(12px, 9999px, 59px, 0);
-  }
-  15% {
-    clip: rect(99px, 9999px, 61px, 0);
-  }
-  20% {
-    clip: rect(22px, 9999px, 14px, 0);
-  }
-  25% {
-    clip: rect(68px, 9999px, 37px, 0);
-  }
-  30% {
-    clip: rect(71px, 9999px, 23px, 0);
-  }
-  35% {
-    clip: rect(25px, 9999px, 74px, 0);
-  }
-  40% {
-    clip: rect(75px, 9999px, 86px, 0);
-  }
-  45% {
-    clip: rect(37px, 9999px, 48px, 0);
-  }
-  50% {
-    clip: rect(99px, 9999px, 3px, 0);
-  }
-  55% {
-    clip: rect(30px, 9999px, 85px, 0);
-  }
-  60% {
-    clip: rect(28px, 9999px, 33px, 0);
-  }
-  65% {
-    clip: rect(77px, 9999px, 62px, 0);
-  }
-  70% {
-    clip: rect(18px, 9999px, 17px, 0);
-  }
-  75% {
-    clip: rect(57px, 9999px, 43px, 0);
-  }
-  80% {
-    clip: rect(49px, 9999px, 29px, 0);
-  }
-  85% {
-    clip: rect(51px, 9999px, 83px, 0);
-  }
-  90% {
-    clip: rect(45px, 9999px, 13px, 0);
-  }
-  95% {
-    clip: rect(30px, 9999px, 99px, 0);
-  }
-  100% {
-    clip: rect(69px, 9999px, 36px, 0);
-  }
-}
-
-@keyframes glitch-effect {
-  0% {
-    clip: rect(37px, 9999px, 17px, 0);
-  }
-  5% {
-    clip: rect(93px, 9999px, 19px, 0);
-  }
-  10% {
-    clip: rect(12px, 9999px, 59px, 0);
-  }
-  15% {
-    clip: rect(99px, 9999px, 61px, 0);
-  }
-  20% {
-    clip: rect(22px, 9999px, 14px, 0);
-  }
-  25% {
-    clip: rect(68px, 9999px, 37px, 0);
-  }
-  30% {
-    clip: rect(71px, 9999px, 23px, 0);
-  }
-  35% {
-    clip: rect(25px, 9999px, 74px, 0);
-  }
-  40% {
-    clip: rect(75px, 9999px, 86px, 0);
-  }
-  45% {
-    clip: rect(37px, 9999px, 48px, 0);
-  }
-  50% {
-    clip: rect(99px, 9999px, 3px, 0);
-  }
-  55% {
-    clip: rect(30px, 9999px, 85px, 0);
-  }
-  60% {
-    clip: rect(28px, 9999px, 33px, 0);
-  }
-  65% {
-    clip: rect(77px, 9999px, 62px, 0);
-  }
-  70% {
-    clip: rect(18px, 9999px, 17px, 0);
-  }
-  75% {
-    clip: rect(57px, 9999px, 43px, 0);
-  }
-  80% {
-    clip: rect(49px, 9999px, 29px, 0);
-  }
-  85% {
-    clip: rect(51px, 9999px, 83px, 0);
-  }
-  90% {
-    clip: rect(45px, 9999px, 13px, 0);
-  }
-  95% {
-    clip: rect(30px, 9999px, 99px, 0);
-  }
-  100% {
-    clip: rect(69px, 9999px, 36px, 0);
-  }
-}
-
-.lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 64px;
-  height: 64px;
-}
-
-.lds-ring div {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 51px;
-  height: 51px;
-  margin: 6px;
-  border: 6px solid #fff;
-  border-radius: 50%;
-  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
-}
-
-.lds-ring div:nth-child(1) {
-  -webkit-animation-delay: -0.45s;
-          animation-delay: -0.45s;
-}
-
-.lds-ring div:nth-child(2) {
-  -webkit-animation-delay: -0.3s;
-          animation-delay: -0.3s;
-}
-
-.lds-ring div:nth-child(3) {
-  -webkit-animation-delay: -0.15s;
-          animation-delay: -0.15s;
-}
-
-@-webkit-keyframes lds-ring {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes lds-ring {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-/*# sourceMappingURL=style.css.map */

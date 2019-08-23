@@ -1,49 +1,3 @@
-function turnOff() {
-  $("div#topDiv").animate(
-    {
-      height: "50%",
-      opacity: 1
-    },
-    400
-  );
-  $("div#bottomDiv").animate(
-    {
-      height: "50%",
-      opacity: 1
-    },
-    400,
-    function() {
-      $("div#centerDiv")
-        .css({ display: "block" })
-        .animate(
-          {
-            width: "0%",
-            left: "50%"
-          },
-          300,
-          () => {
-            window.open("/events", "_self");
-          }
-        );
-    }
-  );
-}
-
-function loaderDot() {
-  if (
-    $("#txt")
-      .text()
-      .indexOf("...") !== -1
-  ) {
-    $("#txt").text("Initializing");
-    $("#txt").attr("data-text", "Initializing");
-  } else {
-    $("#txt").text($("#txt").text() + ".");
-    $("#txt").attr("data-text", String($("#txt").attr("data-text")) + ".");
-  }
-  setTimeout(turnOff, 3000);
-}
-
 $(function() {
   $(".mat-input-outer label").click(function() {
     $(this)
@@ -74,7 +28,7 @@ $(document).ready(() => {
   $("#logo").fadeIn("slow", () => {
     let diff = Math.floor(
       new Date(eventDate - Date.now()) / 1000 / 60 / 60 / 24
-    );
+    )+1;
     setTimeout(() => {
       if (diff < 1) {
         b.text(() => "Initialization Completed.").reveal(5500);
@@ -86,7 +40,7 @@ $(document).ready(() => {
         b.text(() => "Initializing...").reveal(5500);
         $("#txt").attr("data-text", "Initializing...");
         setInterval(loaderDot, 1000);
-        diff = diff > 1 ? `${diff} days left` : `${diff} day left`;
+        diff = diff > 1 ? `${diff} DAYS TO GO` : `${diff} day left`;
         $("#timer").attr("data-text", `${diff}`);
 
         c.text(() => {
@@ -94,7 +48,7 @@ $(document).ready(() => {
         }).reveal(5500);
       }
       // setTimeout(turnOff, 2000);
-    }, 500);
+    }, 0);
   });
 });
 particlesJS.load("particle-bg", "js/particles-config.json");

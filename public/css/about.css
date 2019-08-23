@@ -1,0 +1,270 @@
+@media screen and (max-width: 900px) {
+    .socialBox {
+        justify-content: flex-start !important;
+    }
+}
+
+.socialBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.socialBox:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.socialLogo {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+#contactsBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.support {
+    border: 1px solid #CB356B;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    flex-grow: 1;
+    padding: 10px 0;
+    margin: 2px;
+}
+
+.support:hover {
+    background: #CB356B;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #BD3F32, #CB356B);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    text-decoration: none;
+}
+
+.contact {
+    border: 1px solid #0cebeb;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    flex-grow: 1;
+    padding: 10px 0;
+    margin: 2px;
+}
+
+.contact:hover {
+    background: #0cebeb;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #29ffc6, #20e3b2, #0cebeb);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #29ffc6, #20e3b2, #0cebeb);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: black !important;
+    text-decoration: none;
+}
+.section {
+    margin: 40px auto;
+}
+
+.wrapper {
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 5px;
+    z-index: 5;
+    background-color: #121214;
+}
+
+.logo {
+    max-height: 100px;
+    display: inline-block;
+    padding: 0 30px;
+}
+
+#collegeLogo {
+    border-right: 1px solid white;
+}
+
+#particle-bg {
+    position: fixed;
+    z-index: -3;
+    height: 100vh;
+    left: 0;
+    right: 0;
+}
+
+#nav-bar {
+    position: fixed;
+    z-index: 5;
+}
+
+#content {
+    color: white;
+    margin: 10px auto;
+    width: 60%;
+}
+
+.hackerz-brand {
+    font-size: 1.2em;
+    position: relative;
+    top: 18px;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    color: inherit;
+    font-weight: 300;
+    display: inline-block;
+    transition: width .5s ease-out;
+    -webkit-transition: width .5s ease-out;
+}
+
+.event-header {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.glitch {
+    position: relative;
+    margin: 15px auto;
+    color: #c1c1c1;
+    text-align: center;
+    letter-spacing: 0.01em;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+}
+
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background: #17141d;
+    color: #c1c1c1;
+    clip: rect(0, 900px, 0, 0);
+}
+
+.glitch::before {
+    left: 7px;
+    text-shadow: 1px 0 blue;
+    animation: glitch-effect 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: 3px;
+    text-shadow: -1px 0 red;
+    animation: glitch-effect 2s infinite linear alternate-reverse;
+}
+
+@-webkit-keyframes glitch-effect {
+    0% {
+        clip: rect(54px, 9999px, 87px, 0);
+    }
+    10% {
+        clip: rect(69px, 9999px, 48px, 0);
+    }
+    20% {
+        clip: rect(38px, 9999px, 55px, 0);
+    }
+    30% {
+        clip: rect(48px, 9999px, 57px, 0);
+    }
+    40% {
+        clip: rect(57px, 9999px, 68px, 0);
+    }
+    50% {
+        clip: rect(51px, 9999px, 20px, 0);
+    }
+    60% {
+        clip: rect(2px, 9999px, 30px, 0);
+    }
+    70% {
+        clip: rect(42px, 9999px, 23px, 0);
+    }
+    80% {
+        clip: rect(59px, 9999px, 67px, 0);
+    }
+    90% {
+        clip: rect(45px, 9999px, 26px, 0);
+    }
+    100% {
+        clip: rect(78px, 9999px, 34px, 0);
+    }
+}
+
+@keyframes glitch-effect {
+    0% {
+        clip: rect(54px, 9999px, 87px, 0);
+    }
+    10% {
+        clip: rect(69px, 9999px, 48px, 0);
+    }
+    20% {
+        clip: rect(38px, 9999px, 55px, 0);
+    }
+    30% {
+        clip: rect(48px, 9999px, 57px, 0);
+    }
+    40% {
+        clip: rect(57px, 9999px, 68px, 0);
+    }
+    50% {
+        clip: rect(51px, 9999px, 20px, 0);
+    }
+    60% {
+        clip: rect(2px, 9999px, 30px, 0);
+    }
+    70% {
+        clip: rect(42px, 9999px, 23px, 0);
+    }
+    80% {
+        clip: rect(59px, 9999px, 67px, 0);
+    }
+    90% {
+        clip: rect(45px, 9999px, 26px, 0);
+    }
+    100% {
+        clip: rect(78px, 9999px, 34px, 0);
+    }
+}
+
+body {
+    background-repeat: no-repeat;
+    background-color: #17141D;
+    overflow-x: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
