@@ -25,6 +25,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="/events" class="menu-item nav-link" id="about-btn">
+                        Events
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="/about" class="menu-item nav-link" id="about-btn">
                         Contact
                     </a>
@@ -58,9 +63,14 @@
         ${!event.unregistered ?
         `
         <p class="h6 error-message" id="register-error-message">Register Error</p>
-        <div class="registration">
-            <input id="password" type="password" placeholder="Enter your password to confirm your registration" />
+        <div id="registered-btn">REGISTERED</div>
+        <div class="registration" id="register-div">
+            <input id="password" type="password" placeholder="Enter your password to confirm your registration"
+                style="flex: 1;" />
             <div id="register-btn">REGISTER</div>
+            <div class="spinner-grow text-light" role="status" id="register-spinner" style="display: none">
+                <span class="sr-only">Loading...</span>
+            </div>
         </div>`
         :
         `
@@ -95,33 +105,8 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/axios.min.js"></script>
     <script src="../js/particles.js"></script>
-    <script>
-        particlesJS.load("particle-bg", "../js/particles-config.json");
-        if (!window.localStorage.user) {
-            document.getElementById("register-btn").innerText = "Login to Register"
-            document.getElementById("register-btn").onclick = function (e) {
-                window.location.href = '/login'
-            }
-        } else {
-            document.getElementById("register-btn").onclick = function (e) {
-                var passwordBox = document.getElementById("password")
-                if (getComputedStyle(passwordBox, null).display === 'none') {
-                    passwordBox.style.display = "initial";
-                }
-                else {
-                    console.log("Register")
-                    axios.post('/register/' + window.location.pathname.split('/')[2], {
-                        password: document.getElementById('password').value
-                    }).then(function (response) {
-                        console.log(response);
-                    }).catch(function (err) {
-                        console.log(err);
-                    })
-                }
-            }
-        }
-    </script>
     <script src="../js/loginHelper.js"></script>
+    <script src="../js/registrationHelper.js"></script>
 </body>
 
 </html>

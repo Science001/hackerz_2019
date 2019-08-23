@@ -61,7 +61,7 @@
   outline: none;
 }
 
-#register-btn {
+#register-btn, #registered-btn {
   color: black;
   padding: 10px;
   border: 1px solid #0cebeb;
@@ -76,6 +76,10 @@
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #29ffc6, #20e3b2, #0cebeb);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#registered-btn {
+  display: none;
 }
 
 #register-btn:hover {
@@ -150,7 +154,22 @@ nav {
   border-radius: 5px;
   padding: 10px 10px;
   margin-right: 30px;
-  max-width: 125px;
+}
+
+#logout-btn {
+  display: none;
+  color: #FF2323;
+  text-decoration: none;
+  border: 1px solid #FF2323;
+  border-radius: 5px;
+  padding: 10px 10px;
+  margin-right: 30px;
+}
+
+#logout-btn:hover {
+  color: white;
+  cursor: pointer;
+  background: #FF2323;
 }
 
 #profile {
@@ -166,6 +185,15 @@ nav {
 #login-btn:hover {
   color: black;
   background: white;
+}
+
+.menu-item {
+  color: white;
+  text-decoration: none;
+  /* border: 1px solid white; */
+  /* border-radius: 5px; */
+  padding: 10px 10px;
+  margin-right: 30px;
 }
 
 body {

@@ -157,9 +157,9 @@ body {
 
 #logout-btn {
   display: none;
-  color: #FF2323;
+  color: white;
   text-decoration: none;
-  border: 1px solid #FF2323;
+  border: 1px solid white;
   border-radius: 5px;
   padding: 10px 10px;
   margin-right: 30px;
@@ -168,6 +168,7 @@ body {
 #logout-btn:hover {
   color: white;
   cursor: pointer;
+  border-color: #FF2323;
   background: #FF2323;
 }
 

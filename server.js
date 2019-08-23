@@ -46,6 +46,14 @@ app.get('/events', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'events.html'))
 })
 
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'about.html'))
+})
+
+app.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'contact.html'))
+})
+
 app.get('/events/:genre', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', `${req.params.genre}.html`))
 })
@@ -66,37 +74,42 @@ app.post('/login', (req, res, next) => {
     else next()
 }, (req, res) => {
     var { email, password } = req.body
-    pool.query('SELECT * FROM students where email = $1', [email], (err, result) => {
-        if (err) {
-            console.log(err)
-            res.status(500).send({ message: "Something went Wrong" })
-        }
-        else {
-            if (result.rows.length === 0) {
-                res.status(401).send({ message: "No such user found" })
+    pool.query(`SELECT s.id, s.name, s.department, s.college, s.password, s.year, array_agg(r.event) as registered_events from students s
+            LEFT JOIN registrations r ON r.student = s.id
+            WHERE email = $1
+            GROUP BY s.id`, [email], (err, result) => {
+            if (err) {
+                console.log(err)
+                res.status(500).send({ message: "Something went Wrong" })
             }
             else {
-                var actualhashed = result.rows[0].password;
-                var salt = actualhashed.split('$')[2];
-                var givenHashed = hash(password, salt);
-                if (actualhashed === givenHashed) {
-                    var user = result.rows[0]
-                    delete user['password']
-                    req.session.user = user
-                    res.send({
-                        email: user.email,
-                        name: user.name,
-                        college: user.college,
-                        year: user.year,
-                        department: user.department
-                    })
+                if (result.rows.length === 0) {
+                    res.status(401).send({ message: "No such user found" })
                 }
                 else {
-                    res.status(400).send({ message: "Incorrect Password" })
+                    var actualhashed = result.rows[0].password;
+                    var salt = actualhashed.split('$')[2];
+                    var givenHashed = hash(password, salt);
+                    if (actualhashed === givenHashed) {
+                        var user = result.rows[0]
+                        user['registered_events'] = user.registered_events.includes(null) ? [] : user.registered_events
+                        delete user['password']
+                        req.session.user = user
+                        res.send({
+                            email: user.email,
+                            name: user.name,
+                            college: user.college,
+                            year: user.year,
+                            department: user.department,
+                            registered_events: user.registered_events
+                        })
+                    }
+                    else {
+                        res.status(400).send({ message: "Incorrect Password" })
+                    }
                 }
             }
-        }
-    })
+        })
 })
 
 app.post('/signup', (req, res, next) => {
@@ -123,6 +136,7 @@ app.post('/signup', (req, res, next) => {
                     }
                     else {
                         var user = result.rows[0]
+                        user['registered_events'] = []
                         delete user['password']
                         req.session.user = user
                         res.send({
@@ -130,7 +144,8 @@ app.post('/signup', (req, res, next) => {
                             name: user.name,
                             college: user.college,
                             year: user.year,
-                            department: user.department
+                            department: user.department,
+                            registered_events: user.registered_events
                         })
                     }
                 })
@@ -150,7 +165,8 @@ app.get('/whoami', (req, res) => {
             name: user.name,
             college: user.college,
             year: user.year,
-            department: user.department
+            department: user.department,
+            registered_events: user.registered_events
         })
     }
     else {
@@ -201,6 +217,9 @@ app.post('/register/:event', (req, res, next) => {
             }
         }
         else {
+            var user = req.session.user
+            user['registered_events'].push(req.params.event)
+            req.session.user = user
             res.send({ message: "Successfully registered for the event" })
         }
     })

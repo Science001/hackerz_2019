@@ -12,6 +12,8 @@ module.exports = function createPage(event) {
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/single_event.css">
+        <script src="../js/axios.min.js"></script>
+        <script src="../js/whoamiHelper.js"></script>
         <title>Hackerz | ${event.name}</title>
     </head>
     
@@ -19,30 +21,35 @@ module.exports = function createPage(event) {
         <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color">
             <img src="../images/NewHackerzWhite.png" width="80" alt="hackerzLogo" class="hackerzLogo" />
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
-            aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+                aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                    <a href="/about" class="menu-item nav-link" id="about-btn">
-                        About
-                    </a>
+                        <a href="/about" class="menu-item nav-link" id="about-btn">
+                            About
+                        </a>
                     </li>
                     <li class="nav-item">
-                    <a href="/about" class="menu-item nav-link" id="about-btn">
-                        Contact
+                    <a href="/events" class="menu-item nav-link" id="about-btn">
+                        Events
                     </a>
+                </li>
+                    <li class="nav-item">
+                        <a href="/about" class="menu-item nav-link" id="about-btn">
+                            Contact
+                        </a>
                     </li>
                     <li class="nav-item">
-                    <a href="/login" class="menu-item" id="login-btn">
-                        Login
-                    </a>
+                        <a href="/login" class="menu-item" id="login-btn">
+                            Login
+                        </a>
                     </li>
                     <li class="nav-item">
-                    <a class="menu-item" id="logout-btn">
-                        Logout
-                    </a>
+                        <a class="menu-item" id="logout-btn">
+                            Logout
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -63,11 +70,12 @@ module.exports = function createPage(event) {
             ${!event.unregistered ?
             `
             <p class="h6 error-message" id="register-error-message">Register Error</p>
-            <div class="registration">
-                <input id="password" type="password" placeholder="Enter your password to confirm your registration" style="flex: 1;"/>
+            <div id="registered-btn">REGISTERED</div>
+            <div class="registration" id="register-div">
+                <input id="password" type="password" placeholder="Enter your password to confirm your registration"
+                    style="flex: 1;" />
                 <div id="register-btn">REGISTER</div>
-                <div class="spinner-grow text-light" role="status" id="register-spinner"
-                    style="display: none">
+                <div class="spinner-grow text-light" role="status" id="register-spinner" style="display: none">
                     <span class="sr-only">Loading...</span>
                 </div>
             </div>`
@@ -102,59 +110,9 @@ module.exports = function createPage(event) {
         </section>
         <script src="../js/jquery.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
-        <script src="../js/axios.min.js"></script>
         <script src="../js/particles.js"></script>
-        <script>
-            particlesJS.load("particle-bg", "../js/particles-config.json");
-            if (!window.localStorage.user) {
-                document.getElementById("register-btn").innerText = "Login to Register"
-                document.getElementById("register-btn").onclick = function (e) {
-                    window.location.href = '/login'
-                }
-            } else {
-                var reg_btn = document.getElementById("register-btn")
-                reg_btn.onclick = function (e) {
-                    var passwordBox = document.getElementById("password")
-                    var register_error_message = document.getElementById("register-error-message")
-                    var register_spinner = document.getElementById('register-spinner')
-                    if (getComputedStyle(passwordBox, null).display === 'none') {
-                        passwordBox.style.display = "initial";
-                    }
-                    else {
-                        reg_btn.style.display = "none"
-                        register_spinner.style.display = "inline-block"
-                        axios.post('/register/' + window.location.pathname.split('/')[2], {
-                            password: document.getElementById('password').value
-                        }).then(function (response) {
-                            console.log(response);
-                            register_error_message.innerText = "Registered Successfully"
-                            register_error_message.style.display = "block"
-                            register_error_message.style.color = "green"
-                            register_spinner.style.display = "none"
-                            passwordBox.style.display = "none";
-
-                        }).catch(function (err) {
-                            console.log(err);
-                            register_spinner.style.display = "none"
-                            reg_btn.style.display = "block"
-                            if (err.response) {
-                                if (err.response.status == 403) {
-                                    reg_btn.style.display = "none"   
-                                    passwordBox.style.display = "none";
-                                    register_error_message.style.color = "green"
-                                }
-                                register_error_message.innerText = err.response.data.message
-                            } else {
-                                register_error_message.innerText = "Something went wrong"
-                            }
-                            register_error_message.style.display = "block"
-                            register_error_message.style.color = "#FF2323"
-                        })
-                    }
-                }
-            }
-        </script>
         <script src="../js/loginHelper.js"></script>
+        <script src="../js/registrationHelper.js"></script>
     </body>
     
     </html>`
