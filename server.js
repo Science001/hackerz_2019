@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 if (process.env.NODE_ENV !== 'production') {
     app.use(morgan("dev"))
 }
-app.use(morgan('dev'))
+
 app.use(session({
     name: 'sessionID',
     secret: 'cartoonwarriorgiggleinstahackremotinteloboratewelcomingracewaterdriftxopgg',
@@ -36,6 +36,10 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'html', 'index.html'))
+})
+
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'login.html'))
 })
 
 app.get('/events', (req, res) => {
@@ -96,13 +100,13 @@ app.post('/login', (req, res, next) => {
 })
 
 app.post('/signup', (req, res, next) => {
-    var { email, password, name, college, year, department } = req.body
-    if (!college || !password || !name || !email || !year || !department) {
+    var { email, password, name, college, year, department, mobile } = req.body
+    if (!college || !password || !name || !email || !year || !department || !mobile) {
         res.status(400).send({ message: "One or more details are missing" })
     }
     else next()
 }, (req, res) => {
-    var { email, password, name, college, year, department } = req.body
+    var { email, password, name, college, year, department, mobile } = req.body
     var salt = crypto.randomBytes(128).toString('hex')
     var hashedPassword = hash(password, salt)
     pool.query('SELECT email from students where email=$1', [email], (err, results) => {
@@ -112,7 +116,7 @@ app.post('/signup', (req, res, next) => {
         }
         else {
             if (results.rowCount === 0) {
-                pool.query('INSERT INTO students(email, password, name, college, year, department) VALUES($1, $2, $3, $4, $5, $6) returning *', [email, hashedPassword, name, college, year, department], (err, result) => {
+                pool.query('INSERT INTO students(email, password, name, college, year, department, mobile) VALUES($1, $2, $3, $4, $5, $6, $7) returning *', [email, hashedPassword, name, college, year, department, mobile], (err, result) => {
                     if (err) {
                         console.log(err)
                         res.status(500).send({ message: "Something went Wrong" })
@@ -166,8 +170,23 @@ app.post('/register/:event', (req, res, next) => {
     }
     else if (!req.params.event) {
         res.status(400).send({ message: "No Event ID is specified in request" })
+    } else {
+        var password = req.body.password
+        pool.query("SELECT password FROM students WHERE id=$1", [req.session.user.id], (err, result) => {
+            if (err) {
+                res.status(500).send({ message: 'Something went wrong' })
+            } else {
+                var actualhashed = result.rows[0].password;
+                var salt = actualhashed.split('$')[2];
+                var givenHashed = hash(password, salt);
+                if (actualhashed === givenHashed) {
+                    next()
+                } else {
+                    res.status(401).send({ message: 'Wrong password' })
+                }
+            }
+        })
     }
-    else next()
 }, (req, res) => {
     pool.query("INSERT INTO registrations(student, event) VALUES($1, $2)", [req.session.user.id, req.params.event], (err, _result) => {
         if (err) {

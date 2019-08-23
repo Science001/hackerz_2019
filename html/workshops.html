@@ -11,15 +11,44 @@
 </head>
 
 <body>
-    <nav>
-        <a href="/events"><img src="../images/NewHackerzWhite.png" width="80" alt="hackerzLogo"
-                class="hackerzLogo" /></a>
-        <h3 class="event-header title glitch" data-text="Workshops">Workshops</h3>
-        <a href="/login" id="login-btn">
-            Login
-        </a>
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color">
+        <img src="../images/NewHackerzWhite.png" width="80" alt="hackerzLogo" class="hackerzLogo" />
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+            aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/about" class="menu-item nav-link" id="about-btn">
+                        About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/events" class="menu-item nav-link" id="about-btn">
+                        Events
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="menu-item nav-link" id="about-btn">
+                        Contact
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/login" class="menu-item" id="login-btn">
+                        Login
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="menu-item" id="logout-btn">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <section class="event-container" id="workshops">
+        <h3 class="event-header title glitch" data-text="Workshops">Workshops</h3>
         <div class="grid">
             <div class="card2 item1">
                 <h3 class="title">TensorFlow</h3>
@@ -37,12 +66,13 @@
         <div id="particle-bg"></div>
 
     </section>
-
+    <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/particles.js"></script>
     <script>
         particlesJS.load("particle-bg", "../js/particles-config.json");
     </script>
+    <script src="../js/loginHelper.js"></script>
 </body>
 
 </html>

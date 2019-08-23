@@ -11,14 +11,45 @@
 </head>
 
 <body>
-    <nav>
-       <a href="/events"><img src="../images/NewHackerzWhite.png" width="80" alt="hackerzLogo" class="hackerzLogo"/></a>
-        <h3 class="event-header title glitch" data-text="Non-Technical Events">Non-Technical Events</h3>
-        <a href="/login" id="login-btn">
-            Login
-        </a>
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color">
+        <img src="../images/NewHackerzWhite.png" width="80" alt="hackerzLogo" class="hackerzLogo" />
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+            aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/about" class="menu-item nav-link" id="about-btn">
+                        About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/events" class="menu-item nav-link" id="about-btn">
+                        Events
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="menu-item nav-link" id="about-btn">
+                        Contact
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/login" class="menu-item" id="login-btn">
+                        Login
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="menu-item" id="logout-btn">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <section class="event-container" id="non-technical">
+        <h3 class="event-header title glitch" data-text="Non-Technical Events">Non-Technical Events</h3>
+
         <div class="grid">
             <div class="card2 item1">
                 <h3 class="title">Focus</h3>
@@ -29,7 +60,8 @@
             <div class="card2 item2">
                 <h3 class="title">Meme Fad</h3>
                 <img class="hideableLogo" src="../icons/meme-filled.png" />
-                <p class="desc">Meme Creators are taking over the Internet, with relatable and funny memes. Are you one such top creator?</p>
+                <p class="desc">Meme Creators are taking over the Internet, with relatable and funny memes. Are you one
+                    such top creator?</p>
                 <a class="bttn" href="/event/meme-fad">Learn More</a>
             </div>
             <div class="card2 item3">
@@ -41,13 +73,15 @@
             <div class="card2 item4">
                 <h3 class="title">Graphica</h3>
                 <img class="hideableLogo" src="../icons/graphica-filled.png" />
-                <p class="desc">Put your creativity on test, in this graphic design competition. Make it simple, but significant.</p>
+                <p class="desc">Put your creativity on test, in this graphic design competition. Make it simple, but
+                    significant.</p>
                 <a class="bttn" href="/event/graphica">Learn More</a>
             </div>
             <div class="card2 item5">
                 <h3 class="title">Gizmo-Mania</h3>
                 <img class="hideableLogo" src="../icons/gizmo-filled.png" />
-                <p class="desc">Product Reviews! Given a gadget, on-spot, take it over your hand and head and pitch a fully detailed review over the product.</p>
+                <p class="desc">Product Reviews! Given a gadget, on-spot, take it over your hand and head and pitch a
+                    fully detailed review over the product.</p>
                 <a class="bttn" href="/event/gizmo-mania">Learn More</a>
             </div>
             <div class="card2 item6">
@@ -59,19 +93,21 @@
             <div class="card2 item7">
                 <h3 class="title">Rolling Sir</h3>
                 <img class="hideableLogo" src="../icons/rolling-filled.png" />
-                <p class="desc">A short film competition to find the best film crew in the town. Screen your short film at the event and stand a chance to be crowned the best. </p>
+                <p class="desc">A short film competition to find the best film crew in the town. Screen your short film
+                    at the event and stand a chance to be crowned the best. </p>
                 <a class="bttn" href="/event/rolling-sir">Learn More</a>
             </div>
         </div>
         <div id="particle-bg"></div>
 
     </section>
-
+    <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/particles.js"></script>
     <script>
         particlesJS.load("particle-bg", "../js/particles-config.json");
     </script>
+    <script src="../js/loginHelper.js"></script>
 </body>
 
 </html>

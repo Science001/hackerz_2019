@@ -11,14 +11,39 @@
 </head>
 
 <body>
-  <nav>
+  <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color">
     <img src="../images/NewHackerzWhite.png" width="80" alt="hackerzLogo" class="hackerzLogo" />
-    <h3 class="event-header title glitch" data-text="Events Catalog">Events Catalog</h3>
-    <a href="/login" id="login-btn">
-      Login
-    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+      aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="/about" class="menu-item nav-link" id="about-btn">
+            About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/contact" class="menu-item nav-link" id="about-btn">
+            Contact
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/login" class="menu-item" id="login-btn">
+            Login
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="menu-item" id="logout-btn">
+            Logout
+          </a>
+        </li>
+      </ul>
+    </div>
   </nav>
   <section class="event-container" id="events">
+    <h3 class="event-header title glitch" data-text="Events Catalog">Events Catalog</h3>
     <div class="grid">
       <a href="/events/technical">
         <div class="card2 item1 spz" id="e_technical">
@@ -27,33 +52,33 @@
         </div>
       </a>
       <a href="/events/non-technical">
-      <div class="card2 item2 spz" id="e_non-technical">
-        <img style="width: 100px; height: 100px;" src="../icons/non-technical-filled.png">
-        <h3 class="title">Non-Technical</h3>
-      </div>
+        <div class="card2 item2 spz" id="e_non-technical">
+          <img style="width: 100px; height: 100px;" src="../icons/non-technical-filled.png">
+          <h3 class="title">Non-Technical</h3>
+        </div>
       </a>
       <a href="/events/workshops">
-      <div class="card2 item3 spz" id="e_workshops">
-        <img style="width: 100px; height: 100px;" src="../icons/workshops-filled.png">
-        <h3 class="title">Workshops</h3>
-      </div>
+        <div class="card2 item3 spz" id="e_workshops">
+          <img style="width: 100px; height: 100px;" src="../icons/workshops-filled.png">
+          <h3 class="title">Workshops</h3>
+        </div>
       </a>
       <a href="/events/gaming">
-      <div class="card2 item4 spz" id="e_gaming">
-        <img style="width: 100px; height: 100px;" src="../icons/gaming-filled.png">
-        <h3 class="title">Gaming</h3>
-      </div>
+        <div class="card2 item4 spz" id="e_gaming">
+          <img style="width: 100px; height: 100px;" src="../icons/gaming-filled.png">
+          <h3 class="title">Gaming</h3>
+        </div>
       </a>
     </div>
     <div id="particle-bg"></div>
-
   </section>
-
+  <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/particles.js"></script>
   <script>
     particlesJS.load("particle-bg", "../js/particles-config.json");
   </script>
+  <script src="../js/loginHelper.js"></script>
 </body>
 
 </html>
