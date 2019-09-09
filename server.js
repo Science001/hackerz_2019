@@ -13,7 +13,10 @@ const nodemailer = require('nodemailer')
 //Initialization
 require('dotenv').config()
 const app = express()
-const pool = new Pool()
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true
+})
 const eventDetails = require('./helpers/eventDetails.json')
 app.use(bodyParser.json())
 if (process.env.NODE_ENV !== 'production') {
@@ -331,4 +334,4 @@ app.post('/admin/ons/pot', (req, res, next) => {
 })
 
 
-app.listen()
+app.listen(process.env.PORT || 8000)
