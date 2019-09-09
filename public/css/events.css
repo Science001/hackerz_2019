@@ -66,6 +66,7 @@
 }
 
 #technical .grid {
+  margin-bottom: 20px;
   display: grid;
   width: 60%;
   grid-template: repeat(3, 1fr) / repeat(12, 1fr);
@@ -123,6 +124,7 @@ nav {
 
 .event-container {
   position: absolute;
+  padding-left: 4px;
   top: 100px;
   width: 100%;
   display: flex;
@@ -319,6 +321,46 @@ button:focus {
   text-align: center;
   margin-bottom: 20px;
 }
+
+.gen-OD {
+  width: auto;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px 10px;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gen-OD>span {
+  font-weight: 600;
+  background: -webkit-linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.2rem;
+}
+
+.gen-OD:hover {
+  background: -webkit-linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+  border-color: transparent;
+}
+
+.gen-OD:hover>span {
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.error-message {
+  display: none;
+  color: #FF2323;
+}
+
 
 .glitch {
   position: relative;

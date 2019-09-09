@@ -74,6 +74,8 @@ module.exports = function createPage(event) {
                 </ul>
             </div>
             ${!event.unregistered ?
+            event.closed ? `<div id="registration-closed-btn">REGISTRATION CLOSED</div>` 
+            :
             `
             <p class="h6 error-message" id="register-error-message">Register Error</p>
             <div id="registered-btn">REGISTERED</div>

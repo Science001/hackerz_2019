@@ -7,6 +7,8 @@ const session = require('express-session')
 const path = require('path')
 const morgan = require('morgan')
 const createPage = require('./helpers/templater')
+const generateMail = require('./helpers/generateMail')
+const nodemailer = require('nodemailer')
 
 //Initialization
 require('dotenv').config()
@@ -25,6 +27,16 @@ app.use(session({
     resave: true,
     saveUninitialized: false
 }))
+
+let transporter = nodemailer.createTransport({
+    host: 'mail.cithackerz.pro',
+    port: 465,
+    secure: true,
+    auth: {
+        user: 'no-reply@cithackerz.pro',
+        pass: 'hack3rz#cse@CIT'
+    }
+});
 
 //Helper Functions
 function hash(input, salt) {
@@ -74,7 +86,7 @@ app.post('/login', (req, res, next) => {
     else next()
 }, (req, res) => {
     var { email, password } = req.body
-    pool.query(`SELECT s.id, s.name, s.department, s.college, s.password, s.year, array_agg(r.event) as registered_events from students s
+    pool.query(`SELECT s.id, s.name, s.email, s.department, s.college, s.password, s.year, array_agg(r.event) as registered_events from students s
             LEFT JOIN registrations r ON r.student = s.id
             WHERE email = $1
             GROUP BY s.id`, [email], (err, result) => {
@@ -225,4 +237,98 @@ app.post('/register/:event', (req, res, next) => {
     })
 })
 
-app.listen(8080, () => console.log('Server running in 8080'))
+app.post('/generateOD', (req, res, next) => {
+    if (!req.session.user) {
+        res.status(401).send({ message: "You have to be logged in to register for the event" })
+    } else if (req.session.user.registered_events == []) {
+        res.status(400).send({ message: 'You haven\'t registered for any events' })
+    } else {
+        next()
+    }
+}, (req, res) => {
+    var user = req.session.user
+
+    var message = {
+        from: 'no-reply@cithackerz.pro',
+        to: user.email,
+        subject: 'OD Letter for Hackerz Symposium',
+        html: generateMail(user, req.body.papyrus, req.body.focus)
+    };
+    transporter.sendMail(message, (err, info) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send({ message: 'Couldn\'t send mail', error: err })
+        } else {
+            res.status(200).send({ message: 'You will receive mail. If you didn\'t find the mail. Check the spam.' })
+        }
+    })
+})
+
+app.get('/admin/atten/ded', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', `adminAttended.html`))
+})
+
+app.post('/admin/atten/ded', (req, res, next) => {
+    if(!req.body || !req.body.email) res.status(400).send({message: "Bad Request"})
+    else next()
+}, (req, res) => {
+    pool.query('update students set attended=true where email=$1 returning *', [req.body.email], (err, result) => {
+        if(err) {
+            res.status(500).send({message: "Something went wrong"})
+            console.log(err)
+        }
+        else {
+            if(result.rowCount === 0)
+                res.status(404).send({message: "No such student found"})
+            else {
+                res.send({
+                    name: result.rows[0].name,
+                    college: result.rows[0].college,
+                    year: result.rows[0].year,
+                    department: result.rows[0].department,
+                    mobile: result.rows[0].mobile
+                })
+            }
+        }
+    })
+})
+
+app.get('/admin/ons/pot', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', `adminSignup.html`))
+})
+
+app.post('/admin/ons/pot', (req, res, next) => {
+    var { email, name, college, year, department, mobile } = req.body
+    console.log(req.body)
+    if (!college || !name || !email || !year || !department || !mobile) {
+        res.status(400).send({ message: "One or more details are missing" })
+    }
+    else next()
+}, (req, res) => {
+    var { email, name, college, year, department, mobile } = req.body
+    pool.query('SELECT email from students where email=$1', [email], (err, results) => {
+        if (err) {
+            console.log(err)
+            res.status(500).send({ message: "Something went Wrong" })
+        }
+        else {
+            if (results.rowCount === 0) {
+                pool.query('INSERT INTO students(email, name, college, year, department, mobile, attended) VALUES($1, $2, $3, $4, $5, $6, true)', [email, name, college, year, department, mobile], (err, result) => {
+                    if (err) {
+                        console.log(err)
+                        res.status(500).send({ message: "Something went Wrong" })
+                    }
+                    else {
+                        res.sendStatus(200)
+                    }
+                })
+            }
+            else {
+                res.status(400).send({ message: "This email ID is already signed up", promptLogin: true })
+            }
+        }
+    })
+})
+
+
+app.listen()

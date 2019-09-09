@@ -5,6 +5,7 @@ if (!window.localStorage.user) {
     login_btn.style.display = "block"
     logout_btn.style.display = "none"
     login_btn.addEventListener("click", function (e) {
+        e.preventDefault()
         window.location.href = "/login?callbackUrl=" + window.location.pathname
     }, false)
 } else {
@@ -23,8 +24,13 @@ if (!window.localStorage.user) {
     }, false)
     logout_btn.addEventListener("click", function (e) {
         axios.post('/logout')
-        window.localStorage.clear()
-        window.location.reload()
+            .then(function (res) {
+                window.localStorage.clear()
+                window.location.reload()
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
     }, false)
     logout_btn.style.display = "block"
 }

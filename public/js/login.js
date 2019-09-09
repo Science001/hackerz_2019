@@ -46,8 +46,7 @@ function loginCallback(e) {
         .then(function (response) {
             console.log(response);
             window.localStorage.setItem("user", JSON.stringify(response.data))
-            // window.location.href = callbackUrl
-            window.history.back()
+            window.location.href = callbackUrl
         })
         .catch(function (err) {
             console.log(err);

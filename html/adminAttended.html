@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hacker | Attended</title>
+    <link rel="stylesheet" href="../../css/adminAttended.css">
+</head>
+
+<body>
+    <form id="attended-form">
+        <div id="attended-success-message">
+            <p style="color: #76dd76;">Marked as Attended</p>
+            <p>
+                <span style="color: #0cebeb;">Name: </span>
+                <span id="sname"></span>
+            </p>
+            <p>
+                <span style="color: #0cebeb;">College: </span>
+                <span id="scollege"></span>
+            </p>
+            <p>
+                <span style="color: #0cebeb;">Year: </span>
+                <span id="syear"></span>
+            </p>
+            <p>
+                <span style="color: #0cebeb;">Department: </span>
+                <span id="sdepartment"></span>
+            </p>
+            <p>
+                <span style="color: #0cebeb;">Mobile: </span>
+                <span id="smobile"></span>
+            </p>
+            <p style="color: #76dd76;">Continue with next email address</p>
+        </div>
+        <input type="text" name="email" placeholder="Email address">
+        <p id="attended-error-message" style="color: #ec5643;">Attendance Error</p>
+        <button id="attended-button" type="submit">Mark as Attended</button>
+        <p id="loader">Marking...</p>
+    </form>
+    <script src="../../js/axios.min.js"></script>
+    <script src="../../js/adminAttended.js"></script>
+</body>
+
+</html>

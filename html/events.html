@@ -51,6 +51,13 @@
   </nav>
   <section class="event-container" id="events">
     <h3 class="event-header title glitch" data-text="Events Catalog">Events Catalog</h3>
+    <p class="h6 error-message" id="od-error-message" style="display: none;">OD Letter Error</p>
+    <p style="color: white; text-align: center;">Make sure you are <b>logged in</b> and have <b>registered</b> for all events you want to participate before clicking this button.</p>
+    <h5 class="gen-OD title" id="gen-OD-letter" data-toggle="modal" data-target="#confirmationModal"><span>Generate OD
+        Letter</span></h5>
+    <div class="spinner-grow text-light" role="status" id="od-spinner" style="display: none">
+      <span class="sr-only">Loading...</span>
+    </div>
     <div class="grid">
       <a href="/events/technical">
         <div class="card2 item1 spz" id="e_technical">
@@ -79,6 +86,32 @@
     </div>
     <div id="particle-bg"></div>
   </section>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modal-body">
+          <input type="checkbox" id="papyrus">
+          <label for="papyrus">Papyrus</label><br />
+          <input type="checkbox" id="focus">
+          <label for="focus">Focus</label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modal-close">Close</button>
+          <button type="button" class="btn btn-primary" id="gen-OD-letter2">Generate OD Letter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/particles.js"></script>
@@ -86,6 +119,7 @@
     particlesJS.load("particle-bg", "../js/particles-config.json");
   </script>
   <script src="../js/loginHelper.js"></script>
+  <script src="../js/events.js"></script>
 </body>
 
 </html>

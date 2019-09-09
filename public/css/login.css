@@ -104,7 +104,7 @@ button:focus, input:focus {
 }
 
 #login-register, .nav-tabs {
-    background-color: #0909099c;
+    background-color: rgba(9, 9, 9, 0.611764705882353);
     color: #fff;
 }
 
@@ -117,7 +117,7 @@ button:focus, input:focus {
 }
 
 #event-info, #register {
-    background-color: #0909099c;
+    background-color: rgba(9, 9, 9, 0.611764705882353);
     border-radius: 10px;
     -webkit-box-shadow: -1rem 0 1rem #000;
     box-shadow: -1rem 0 1rem #000;
@@ -133,7 +133,7 @@ button:focus, input:focus {
 }
 
 .mat-input-outer input {
-    background: #eaeaea36;
+    background: rgba(234, 234, 234, 0.21176470588235294);
     color: white;
     font-size: 16px;
     height: 50px;

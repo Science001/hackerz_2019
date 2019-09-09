@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/adminSignup.css">
+    <title>Hackerz | Register</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h2 style="margin-bottom: 30px;">On-spot registration</h2>
+        <form id='signup-form'>
+            <label for="inp" class="inp">
+                <input type='text' name="email" placeholder="&nbsp;" />
+                <span class="label">Email</span>
+            </label>
+            <label for="inp" class="inp">
+                <input type='text' name="name" placeholder="&nbsp;" />
+                <span class="label">Name</span>
+            </label>
+            <label for="inp" class="inp">
+                <input type='text' name="college" placeholder="&nbsp;" />
+                <span class="label">College</span>
+            </label>
+            <label for="inp" class="inp">
+                <input type='text' name="year" placeholder="&nbsp;" />
+                <span class="label">Year</span>
+            </label>
+            <label for="inp" class="inp">
+                <input type='text' name="department" placeholder="&nbsp;" />
+                <span class="label">Department</span>
+            </label>
+            <label for="inp" class="inp">
+                <input type='text' name="mobile" placeholder="&nbsp;" />
+                <span class="label">Mobile</span>
+            </label>
+            <!-- <input type='text' placeholder="Name" />
+            <input type='text' placeholder="College" />
+            <input type='text' placeholder="Year" />
+            <input type='text' placeholder="Department" />
+            <input type='text' placeholder="Mobile" /> -->
+            <p id="signup-error-message" style="color: #ec5643;">Signup Error</p>
+            <p id="signup-success-message" style="color: #76dd76;">Registered. Reload the page.</p>
+            <button id="signup-button" type="submit">Register</button>
+            <p id="loader">Registering...</p>
+        </form>
+    </div>
+    <script src="../../js/axios.min.js"></script>
+    <script src="../../js/adminSignup.js"></script>
+</body>
+
+</html>

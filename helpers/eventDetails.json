@@ -300,6 +300,7 @@
             "The duration of the workshop will be two and a half hours.",
             "Atendees will have to bring an USB or any storage device to takeaway resources from the workshop."
         ],
+        "closed": true,
         "hasContacts": true,
         "contacts": [
             {
@@ -323,6 +324,7 @@
             "Atendees will have to bring an USB or any storage device to takeaway resources from the workshop."
         ],
         "hasContacts": true,
+        "closed": true,
         "contacts": [
             {
                 "name": "Rahul Raj",
