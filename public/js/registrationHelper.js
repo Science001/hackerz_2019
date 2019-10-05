@@ -10,7 +10,8 @@ var eventName = window.location.pathname.split('/')[2]
 if (!window.localStorage.user) {
     document.getElementById("register-btn").innerText = "Login to Register"
     document.getElementById("register-btn").onclick = function (e) {
-        window.location.href = '/login'
+        e.preventDefault()
+        window.location.href = "/login?callbackUrl=" + window.location.pathname
     }
 } else {
     var user = JSON.parse(window.localStorage.user)
